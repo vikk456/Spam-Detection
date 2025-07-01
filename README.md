@@ -1,10 +1,62 @@
-# SMS Spam Detection with Machine Learning
+# 📱 SMS Spam Detection using Machine Learning
 
-This notebook demonstrates SMS spam detection using machine learning techniques. The dataset (`spam.csv`) contains SMS messages labeled as "ham" (not spam) or "spam". The workflow includes:
+This project builds a machine learning model to classify SMS messages as **spam** or **ham** (not spam). It uses standard NLP preprocessing, vectorization with `CountVectorizer`, and classifiers like **Multinomial Naive Bayes** and **XGBoost** to achieve high accuracy.
 
-- **Data Preprocessing:** Loading the dataset, selecting relevant columns, and encoding labels.
-- **Text Vectorization:** Converting SMS messages into numerical features using `CountVectorizer`.
-- **Model Training:** Training two classifiers—XGBoost and Multinomial Naive Bayes—on the vectorized data.
-- **Evaluation:** Assessing model performance using accuracy on a held-out test set.
+---
 
-This approach provides a simple yet effective pipeline for classifying SMS messages as spam or not spam.
+## 📂 Dataset
+
+The dataset used is a CSV file (`spam.csv`) containing:
+
+- `v1`: The label (`spam` or `ham`)
+- `v2`: The SMS message text
+
+The labels are encoded as:
+- `1` = Spam  
+- `0` = Ham (Not spam)
+
+---
+
+## ⚙️ Tools & Technologies
+
+- Python  
+- Pandas & NumPy  
+- Scikit-learn  
+- XGBoost  
+- CountVectorizer  
+- Jupyter Notebook  
+
+---
+
+## 🧼 Text Preprocessing
+
+- Selected relevant columns and renamed them  
+- Encoded target labels (spam = 1, ham = 0)  
+- Converted text to lowercase  
+- Applied `CountVectorizer` to convert text into numeric vectors
+
+---
+
+## 🧪 Models Trained
+
+| Model                    | Accuracy  | Notes                               |
+|-------------------------|-----------|--------------------------------------|
+| Multinomial Naive Bayes | ~98.3%    | Performed best on this dataset       |
+| XGBoost Classifier      | ~96.8%    | Powerful but slightly lower accuracy |
+
+---
+
+## 📈 Evaluation
+
+Model performance was evaluated using:
+- **Accuracy**
+- `accuracy_score` from `sklearn.metrics`
+
+---
+
+## 🚀 How to Run
+
+1. Clone this repository  
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
